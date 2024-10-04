@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Tickets</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+    body {
+      background-color: #121212; /* Dark background */
+      color: #fff; /* Light text color */
+      font-family: Arial, sans-serif; /* Font style */
+      background-image: url('Images/b4.jpg'); /* Add your background image URL */
+      background-size: cover; /* Cover the entire background */
+      background-position: center; /* Center the background image */
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9a44); /* Multi-shaded gradient background */
+      padding: 20px; /* Padding for spacing */
+      text-align: center; /* Center-align text */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    }
+
+    header h1 {
+      color: white; /* White color for the header title */
+      font-size: 2.5rem; /* Font size for the header title */
+      margin: 0; /* Remove default margin */
+      text-transform: uppercase; /* Uppercase text */
+      letter-spacing: 2px; /* Space between letters */
+      animation: fadeIn 1s ease; /* Fade-in animation */
+    }
+
+    /* Animation for header title */
+    @keyframes fadeIn {
+      from {
+        opacity: 0; /* Start transparent */
+      }
+      to {
+        opacity: 1; /* End fully visible */
+      }
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker navbar when scrolled */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow effect when scrolled */
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: rgba(30, 30, 30, 0.9); /* Darker card background */
+      padding: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s; /* Transition for lift effect */
+      max-width: 500px; /* Limit the width of the form */
+      margin: auto; /* Center the form */
+    }
+
+    .form-section:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    }
+
+    /* Heading Styles */
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      background: linear-gradient(90deg, #ffb600, #ff3d00, #ff00ff); /* Multi-colored gradient */
+      -webkit-background-clip: text; /* Clip the gradient to the text */
+      -webkit-text-fill-color: transparent; /* Fill text with transparent to show background */
+      transition: color 0.3s; /* Transition for heading color */
+    }
+
+    h2:hover {
+      filter: brightness(1.2); /* Brighten on hover */
+    }
+
+    /* Form Elements */
+    .form-label {
+      font-weight: bold; /* Bold labels */
+      color: #ffb600; /* Change label color for better visibility */
+    }
+
+    .form-control {
+      transition: background-color 0.3s, border-color 0.3s; /* Transition for input fields */
+      background-color: #2b2b2b; /* Darker input background */
+      color: #ffffff; /* Light text color for input */
+    }
+
+    .form-control:focus {
+      background-color: #3c3c3c; /* Darker input background on focus */
+      border-color: #ffb600; /* Yellow border on focus */
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: linear-gradient(90deg, #ffb600, #ff3d00); /* Gradient button background */
+      border: none; /* Remove border */
+      transition: background-color 0.3s, transform 0.3s; /* Button transition */
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #e0a800, #e04d00); /* Darker shade on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    /* Modal Styles */
+    .modal-content {
+      background: linear-gradient(90deg, #4e4e4e, #1a1a1a); /* Colorful background for modal */
+      color: #ffffff; /* Light text color in modal */
+    }
+
+    .modal-header {
+      border-bottom: 1px solid #444; /* Darker border for header */
+      background: #3d3d3d; /* Darker header background */
+    }
+
+    /* Footer Styles */
+    footer {
+      background: linear-gradient(90deg, #ff4b2b, #ff416c); /* Multi-shaded gradient background */
+      color: white; /* Text color */
+      padding: 20px; /* Padding */
+      text-align: center; /* Center text */
+      position: relative; /* Positioning for fixed bottom */
+      bottom: 0; /* Align to bottom */
+      width: 100%; /* Full width */
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    }
+
+    /* Additional Styles */
+    .container {
+      margin-top: 100px; /* Ensure content is below navbar */
+    }
+
+    /* Navbar Styles */
+#navbar {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff9a44); /* Gradient background */
+}
+
+.navbar-brand {
+  color: #fff; /* White text for brand */
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.navbar-brand:hover {
+  color: #ffb600; /* Change color on hover */
+}
+
+.nav-link {
+  color: #ffffff; /* White text for links */
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.nav-link:hover {
+  color: #ffb600; /* Change color on hover */
+}
+
+.nav-link.active {
+  color: #ffb600; /* Highlight active link */
+  font-weight: bold; /* Bold text for active link */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <!-- <header>
+    <h1>Ticket Purchase</h1>
+  </header> -->
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Website</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="buy-tickets.html">Buy Tickets</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Ticket Purchase Form Section -->
+  <div class="container my-5 pt-5">
+    <h2 class="mb-4">Purchase Your Tickets</h2>
+    <div class="form-section">
+      <form id="ticketForm">
+        <div class="mb-3">
+          <label for="eventSelect" class="form-label">Select Event</label>
+          <select class="form-select" id="eventSelect" required>
+            <option value="jazz">Jazz Night</option>
+            <option value="rock">Rock Fest</option>
+            <option value="pop">Pop Extravaganza</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="ticketQuantity" class="form-label">Number of Tickets</label>
+          <input type="number" class="form-control" id="ticketQuantity" min="1" value="1" required>
+        </div>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Complete Purchase</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap Modal for Success Message -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Ticket Purchase Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your tickets have been purchased successfully!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById('ticketForm');
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        successModal.show(); // Show success modal
+        form.reset(); // Reset the form
+      });
+
+      // Add scroll effect for the navbar
+      window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      };
+    });
+  </script>
+</body>
+</html>
